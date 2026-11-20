@@ -1,0 +1,9 @@
+# Rewrite Engine on aakkan
+RewriteEngine On
+
+# Website-ine HTTP-il ninnu HTTPS (Secure) aakkan
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Folder-ile files vere aarum kaanathirikkan
+Options -Indexes
